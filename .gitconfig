@@ -1,0 +1,30 @@
+[user]
+	name = Martin Muzatko
+	email = martin@happy-css.com
+[alias]
+	l = log --graph --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	ls = ls-files
+	st = status
+	amend = commit --amend
+	amendn = ammend --no-edit
+	diffs = diff --staged
+	ch = checkout
+	f = fetch
+	p = push
+	c = commit
+	a = add -p
+	r = reset -p
+	aliases = !git config -l | grep alias | cut -c 7-
+	whois = !sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -
+[diff]
+	tool = meld
+[difftool]
+	prompt = true
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+[push]
+	default = simple
+[core]
+	autocrlf = input
+[branch]
+	autosetuprebase = always
